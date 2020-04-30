@@ -46,11 +46,19 @@
 
     <script>
         divAlert.style.display = `none`;
-        document.getElementById(`runEx`).addEventListener(`click`, function () {
+        runEx.addEventListener(`click`, function () {
             let firstNum = firstNumInput.value;
             let secondNum = secondNumInput.value;
             funcExo1(firstNum, secondNum)
         });
+        form1.onkeydown = function (e) {
+            if (e.keyCode == 13) {
+                let firstNum = firstNumInput.value;
+                let secondNum = secondNumInput.value;
+                funcExo1(firstNum, secondNum)
+            }
+        };
+
 
 
         function funcExo1(firstNum, secondNum) {
