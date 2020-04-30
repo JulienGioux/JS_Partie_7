@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <title>Exercice 1</title>
+</head>
+
+<body class="w3-row">
+    <div class="w3-card-4 w3-col m4 w3-display-middle">
+
+        <header class="w3-container w3-indigo">
+            <h1>Exercice 1 :</h1>
+            <p>Écrire une fonction qui prend 2 nombres en paramètres et qui retourne le résultat de leur multiplication.
+                <br>Créer un formulaire permettant d'entrer deux nombres. Au clic sur un bouton, lancer votre fonction.
+            </p>
+        </header>
+
+        <form id="form1" class="w3-container">
+
+            <label for="firstNumInput">Entrez un premier nombre</label>
+            <input id="firstNumInput" name="firstNumInput" class="w3-input w3-animate-input" type="number" step="0.01"
+                style="width:30%" placeholder="0" required="true">
+
+            <label for="secondNumInput">Entrez un deuxième nombre</label>
+            <input id="secondNumInput" name="secondNumInput" class="w3-input w3-animate-input" type="number" step="0.01"
+                style="width:30%" placeholder="0" required="true">
+            <div class="w3-center">
+                <button id="runEx" class="w3-btn w3-indigo w3-margin" type="button">Executer</button>
+            </div>
+        </form>
+        <footer class="w3-container w3-indigo">
+            <h2>Result :</h2>
+            <div id="myResult" class="w3-container w3-white w3-margin-bottom"></div>
+        </footer>
+    </div>
+
+    <script>
+
+        document.getElementById(`runEx`).addEventListener(`click`, function () {
+            let firstNum = firstNumInput.value;
+        let secondNum = secondNumInput.value;
+            funcExo1(firstNum, secondNum)
+            });
+
+
+        function funcExo1(firstNum, secondNum) {
+
+            console.log(firstNum,secondNum);
+            if (isNaN(firstNum) || firstNum ==`` || isNaN(secondNum) || secondNum ==``) {
+                window.alert(`Les champs doivent être rempli avec des données numériques !`)
+            } else {
+                let result = firstNum * secondNum;
+                cName = `w3-animate-left`;
+                msgHtml = `${firstNum} * ${secondNum} = ${result}`;
+                showResult(firstNum, secondNum, result, cName, msgHtml)
+            }
+
+        }
+
+        function showResult(firstNum, secondNum, result, cName, msgHtml) {
+            myP = document.createElement(`p`);
+            myP.className = cName;
+            myResult.appendChild(myP);
+            myP.innerHTML = msgHtml;
+        }
+    </script>
+</body>
+
+</html>
