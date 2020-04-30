@@ -9,7 +9,7 @@
 </head>
 
 <body class="w3-row">
-    <div class="w3-card-4 w3-col m4 w3-display-middle">
+    <div class="w3-card-4 w3-col m4 w3-display-topmiddle">
 
         <header class="w3-container w3-indigo">
             <h1>Exercice 1 :</h1>
@@ -29,6 +29,12 @@
                 style="width:30%" placeholder="0" required="true">
             <div class="w3-center">
                 <button id="runEx" class="w3-btn w3-indigo w3-margin" type="button">Executer</button>
+                <div id="divAlert" class="w3-panel w3-red w3-display-container">
+                    <span onclick="this.parentElement.style.display='none'"
+                    class="w3-button w3-large w3-display-topright">&times;</span>
+                    <h3>Attention !</h3>
+                    <p>Les champs doivent être rempli avec des données numériques !</p>
+                  </div>
             </div>
         </form>
         <footer class="w3-container w3-indigo">
@@ -38,7 +44,7 @@
     </div>
 
     <script>
-
+        divAlert.style.display = `none`;
         document.getElementById(`runEx`).addEventListener(`click`, function () {
             let firstNum = firstNumInput.value;
         let secondNum = secondNumInput.value;
@@ -50,7 +56,8 @@
 
             console.log(firstNum,secondNum);
             if (isNaN(firstNum) || firstNum ==`` || isNaN(secondNum) || secondNum ==``) {
-                window.alert(`Les champs doivent être rempli avec des données numériques !`)
+                divAlert.style.display = `block`;
+                // window.alert(`Les champs doivent être rempli avec des données numériques !`)
             } else {
                 let result = firstNum * secondNum;
                 cName = `w3-animate-left`;
