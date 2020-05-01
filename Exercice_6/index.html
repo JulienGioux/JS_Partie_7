@@ -54,7 +54,7 @@ function funcSayHello(name) {
                     <span onclick="this.parentElement.style.display='none'"
                         class="w3-button w3-circle w3-large w3-display-topright">&times;</span>
                     <h3>Attention !</h3>
-                    <p>Votre nom ne doit pas contenir de caractères numériques !</p>
+                    <p>Vous devez entrer un nom qui ne doit pas contenir de caractères numériques, ni d'espace ou caractères spéciaux autre que "-" !</p>
                 </div>
             </div>
         </section>
@@ -90,7 +90,7 @@ function funcSayHello(name) {
 
         runEx.onclick = function () {
             let name = myStringInput.value;
-            let pattAz = /[A-z]/;
+            let pattAz = /^[a-zAZéèëêàäâöôûüîï]+-?[a-zA-Zéèëêàäâöôûüîï]+-?[a-zA-Zéèëêàäâöôûüîï]+-?[a-zA-Zéèëêàäâöôûüîï]+$/;
             if (myStringInput.value == `` || !(pattAz.test(name))) {
                 divAlert.style.display = `block`;
             } else {
