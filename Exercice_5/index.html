@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-colors-2019.css">
+    <link href="assets/css/prism.css" rel="stylesheet" />
+    <title>Exercice 5</title>
+</head>
+
+<body class="w3-row">
+    <main class="w3-card-4 w3-col m6 w3-display-topmiddle">
+
+        <header class="w3-container w3-2019-galaxy-blue">
+            <h1>Exercice 5 :</h1>
+            <p>
+                Traduire la fonction suivante en fonction fléchée.
+            </p>
+            <blockquote>Nb : Oui je teste des trucs... prism en l'occurence. C'est joli non ? :p</blockquote>
+            <div class="w3-margin">
+                <pre>
+                    <code class="language-javascript">
+<!-- DO NOT INDENT TO PRESERVE VUE !!! -->
+function getStringLength(string){
+let stringLength;
+if(string.length === 1){
+stringLength = `La chaîne ne contient qu'un seul caractère`;
+} else {
+stringLength = `La chaîne contient ${string.length} caractères`;
+}
+return stringLength;
+}
+<!-- DO NOT INDENT TO PRESERVE VUE !!! -->
+                    </code>
+                </pre>
+            </div>
+        </header>
+        <section class="w3-margin">
+            <h2>Code en fonction fléchée :</h2>
+            <div class="w3-margin">
+                <pre>
+                    <code class="language-javascript">
+<!-- DO NOT INDENT TO PRESERVE VUE !!! -->
+runEx.onclick = () => {
+let string = myStringInput.value;
+console.log(string);
+myResult.innerHTML = `<p>${getStringLength(string)}</p>`;
+}
+getStringLength = string => {
+let stringLength;
+if (string.length === 1) {
+stringLength = `La chaîne contient qu'un seul caractère`;
+} else {
+stringLength = `La chaîne contient ${string.length} caractères`;
+}
+return stringLength;
+}
+<!-- DO NOT INDENT TO PRESERVE VUE !!! -->
+
+                </code>
+            </pre>
+            </div>
+            <h3>Tester la fonction fléchée :</h3>
+            <label for="myStringInput">Chaine de caractère :</label>
+            <input id="myStringInput" name="myStringInput" class="w3-input w3-animate-input" type="text"
+                style="width:30%" placeholder="Votre texte ici" required="true">
+            <div class="w3-center">
+                <button id="runEx" class="w3-btn w3-2019-galaxy-blue w3-margin" type="button">Compter le nombre de
+                    caractère</button>
+
+            </div>
+        </section>
+        <footer class="w3-container w3-2019-galaxy-blue">
+            <h2>Result :</h2>
+            <div id="myResult" class="w3-container w3-white w3-margin-bottom"></div>
+        </footer>
+    </main>
+
+    <script>
+        runEx.onclick = () => {
+            let string = myStringInput.value;
+            console.log(string);
+            myResult.innerHTML = `<p>${getStringLength(string)}</p>`;
+        }
+        getStringLength = string => {
+            let stringLength;
+            if (string.length === 1) {
+                stringLength = `La chaîne contient qu'un seul caractère`;
+            } else {
+                stringLength = `La chaîne contient ${string.length} caractères`;
+            }
+            return stringLength;
+        }
+    </script>
+    <script src="assets/js/prism.js"></script>
+</body>
+
+</html>
