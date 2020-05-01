@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-colors-2019.css">
+    <link href="assets/css/prism.css" rel="stylesheet" />
+    <title>Exercice 6</title>
+</head>
+
+<body class="w3-row">
+    <main class="w3-card-4 w3-col m6 w3-display-topmiddle">
+
+        <header class="w3-container w3-2019-galaxy-blue">
+            <h1>Exercice 6 :</h1>
+            <p>
+                Traduire cette fonction fléchée en fonction nommée.
+            </p>
+<!-- DO NOT INDENT TO PRESERVE VUE !!! -->
+            <div class="w3-margin">
+                <pre>
+                    <code class="language-javascript">
+(name) => {
+    `Bonjour, ${name} ! Comment vas-tu ?`;
+  }
+                    </code>
+                </pre>
+            </div>
+<!-- DO NOT INDENT TO PRESERVE VUE !!! -->
+        </header>
+        <section class="w3-margin">
+            <h2>Code en fonction fléchée :</h2>
+<!-- DO NOT INDENT TO PRESERVE VUE !!! -->
+            <div class="w3-margin">
+                <pre>
+                    <code class="language-javascript">
+runEx.onclick = function () {
+    let name = myStringInput.value;
+    myResult.innerHTML = `<p>${funcShowName(name)}</p>`;
+}
+
+function funcShowName(name) {
+    return `Bonjour, ${name} ! Comment vas-tu ?`;
+}
+                </code>
+            </pre>
+            </div>
+<!-- DO NOT INDENT TO PRESERVE VUE !!! -->
+            <h3>Tester la fonction fléchée :</h3>
+            <label for="myStringInput">Chaine de caractère :</label>
+            <input id="myStringInput" name="myStringInput" class="w3-input w3-animate-input" type="text"
+                style="width:30%" placeholder="Votre texte ici" required="true">
+            <div class="w3-center">
+                <button id="runEx" class="w3-btn w3-2019-galaxy-blue w3-margin" type="button">Compter le nombre de
+                    caractère</button>
+                <div id="divAlert" class="w3-panel w3-pale-yellow w3-display-container">
+                    <span onclick="this.parentElement.style.display='none'"
+                        class="w3-button w3-circle w3-large w3-display-topright">&times;</span>
+                    <h3>Attention !</h3>
+                    <p>Les champs doivent être rempli avec des données numériques !</p>
+                </div>
+            </div>
+        </section>
+        <footer class="w3-container w3-2019-galaxy-blue">
+            <h2>Result :</h2>
+            <div id="myResult" class="w3-container w3-white w3-margin-bottom"></div>
+        </footer>
+    </main>
+
+    <script>
+        divAlert.style.display = `none`;
+        myStringInput.onclick = function () {
+            divAlert.style.display = `none`;
+        }
+        divAlert.onclick = function () {
+            divAlert.style.display = `none`;
+        }
+        runEx.onclick = function () {
+            let name = myStringInput.value;
+            let pattAz = /[A-z]/;
+
+            console.log(name);
+            if (myStringInput.value == `` || !(pattAz.test(name))) {
+                divAlert.style.display = `block`;
+            } else {
+                myResult.innerHTML = `<p>${funcShowName(name)}</p>`;
+            }
+            
+        }
+
+        function funcShowName(name) {
+            return `Bonjour, ${name} ! Comment vas-tu ?`;
+        }
+    </script>
+    <script src="assets/js/prism.js"></script>
+</body>
+
+</html>
