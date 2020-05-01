@@ -6,33 +6,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-colors-2019.css">
-    <title>Exercice 1</title>
+    <title>Exercice 3</title>
 </head>
 
 <body class="w3-row">
     <div class="w3-card-4 w3-col m4 w3-display-topmiddle">
 
         <header class="w3-container w3-2019-galaxy-blue">
-            <h1>Exercice 1 :</h1>
-            <p>Écrire une fonction qui prend 2 nombres en paramètres et qui retourne le résultat de leur multiplication.
-                <br>Créer un formulaire permettant d'entrer deux nombres. Au clic sur un bouton, lancer votre fonction.
+            <h1>Exercice 3 :</h1>
+            <p>
+                Refaire le premier exercice en utilisant une fonction fléchée.
             </p>
             <p>
-                <em>N.B: Oui, j'ai fais joujou avec le framework w3.css pour le fun... Et c'est pas mal du tout et bcp plus léger que bootstrap !</em>
+                <em>N.B: Oui, j'ai fais joujou avec le framework w3.css pour le fun... Et c'est pas mal du tout et bcp
+                    plus léger que bootstrap !</em>
             </p>
         </header>
 
         <form id="form1" class="w3-container">
 
-            <label for="firstNumInput">Entrez un premier nombre</label>
+            <label for="firstNumInput">Entrez un premier nombre "a"</label>
             <input id="firstNumInput" name="firstNumInput" class="w3-input w3-animate-input" type="number" step="0.01"
-                style="width:30%" placeholder="0" required="true">
+                style="width:30%" placeholder="0.00" required="true">
 
-            <label for="secondNumInput">Entrez un deuxième nombre</label>
+            <label for="secondNumInput">Entrez un deuxième nombre "b"</label>
             <input id="secondNumInput" name="secondNumInput" class="w3-input w3-animate-input" type="number" step="0.01"
-                style="width:30%" placeholder="0" required="true">
+                style="width:30%" placeholder="-0.00" required="true">
             <div class="w3-center">
-                <button id="runEx" class="w3-btn w3-2019-galaxy-blue w3-margin" type="button">Executer</button>
+                <button id="runEx" class="w3-btn w3-2019-galaxy-blue w3-margin" type="button">Multiplier a et b</button>
                 <div id="divAlert" class="w3-panel w3-pale-yellow w3-display-container">
                     <span onclick="this.parentElement.style.display='none'"
                         class="w3-button w3-circle w3-large w3-display-topright">&times;</span>
@@ -64,12 +65,11 @@
 
 
 
-        function funcExo1(firstNum, secondNum) {
+        const funcExo1 = (firstNum, secondNum) => {
 
             console.log(firstNum, secondNum);
             if (isNaN(firstNum) || firstNum == `` || isNaN(secondNum) || secondNum == ``) {
                 divAlert.style.display = `block`;
-                // window.alert(`Les champs doivent être rempli avec des données numériques !`)
             } else {
                 let result = firstNum * secondNum;
                 cName = `w3-animate-left`;
@@ -79,7 +79,7 @@
 
         }
 
-        function showResult(firstNum, secondNum, result, cName, msgHtml) {
+        const showResult = (firstNum, secondNum, result, cName, msgHtml) => {
             myP = document.createElement(`p`);
             myP.className = cName;
             myResult.appendChild(myP);
