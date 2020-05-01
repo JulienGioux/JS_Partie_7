@@ -18,7 +18,7 @@
             <p>
                 Traduire cette fonction fléchée en fonction nommée.
             </p>
-<!-- DO NOT INDENT TO PRESERVE VUE !!! -->
+            <!-- DO NOT INDENT TO PRESERVE VUE !!! -->
             <div class="w3-margin">
                 <pre>
                     <code class="language-javascript">
@@ -28,11 +28,11 @@
                     </code>
                 </pre>
             </div>
-<!-- DO NOT INDENT TO PRESERVE VUE !!! -->
+            <!-- DO NOT INDENT TO PRESERVE VUE !!! -->
         </header>
         <section class="w3-margin">
             <h2>Code en fonction nommée :</h2>
-<!-- DO NOT INDENT TO PRESERVE VUE !!! -->
+            <!-- DO NOT INDENT TO PRESERVE VUE !!! -->
             <div class="w3-margin">
                 <pre>
                     <code class="language-javascript">
@@ -42,13 +42,14 @@ function funcSayHello(name) {
                 </code>
             </pre>
             </div>
-<!-- DO NOT INDENT TO PRESERVE VUE !!! -->
+            <!-- DO NOT INDENT TO PRESERVE VUE !!! -->
             <h3>Tester la fonction nommée :</h3>
             <label for="myStringInput">Entrer votre nom :</label>
             <input id="myStringInput" name="myStringInput" class="w3-input w3-animate-input" type="text"
                 style="width:30%" placeholder="Votre nom ici" required="true">
             <div class="w3-center">
-                <button id="runEx" class="w3-btn w3-2019-galaxy-blue w3-margin" type="button">Tester la fonction</button>
+                <button id="runEx" class="w3-btn w3-2019-galaxy-blue w3-margin" type="button">Tester la
+                    fonction</button>
                 <div id="divAlert" class="w3-panel w3-pale-yellow w3-display-container">
                     <span onclick="this.parentElement.style.display='none'"
                         class="w3-button w3-circle w3-large w3-display-topright">&times;</span>
@@ -68,20 +69,34 @@ function funcSayHello(name) {
         myStringInput.onclick = function () {
             divAlert.style.display = `none`;
         }
+        myStringInput.onfocus = function () {
+            divAlert.style.display = `none`;
+        }
         divAlert.onclick = function () {
             divAlert.style.display = `none`;
         }
+
+        myStringInput.onkeydown = function (e) {
+            if (e.keyCode == 13) {
+                let name = myStringInput.value;
+                let pattAz = /[A-z]/;
+                if (myStringInput.value == `` || !(pattAz.test(name))) {
+                    divAlert.style.display = `block`;
+                } else {
+                    myResult.innerHTML = `<p>${funcSayHello(name)}</p>`;
+                }
+            }
+        }
+
         runEx.onclick = function () {
             let name = myStringInput.value;
             let pattAz = /[A-z]/;
-
-            console.log(name);
             if (myStringInput.value == `` || !(pattAz.test(name))) {
                 divAlert.style.display = `block`;
             } else {
                 myResult.innerHTML = `<p>${funcSayHello(name)}</p>`;
             }
-            
+
         }
 
         function funcSayHello(name) {
