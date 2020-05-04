@@ -49,12 +49,12 @@
 
     <script>
         divAlert.style.display = `none`;
-        runEx.addEventListener(`click`, function () {
+        runEx.addEventListener(`click`, () => {
             let firstNum = firstNumInput.value;
             let secondNum = secondNumInput.value;
             funcExo1(firstNum, secondNum)
         });
-        form1.onkeydown = function (e) {
+        form1.onkeydown =  e => {
             if (e.keyCode == 13) {
                 let firstNum = firstNumInput.value;
                 let secondNum = secondNumInput.value;
@@ -74,7 +74,7 @@
                 let result = firstNum * secondNum;
                 cName = `w3-animate-left`;
                 msgHtml = `${firstNum} * ${secondNum} = ${result}`;
-                showResult(firstNum, secondNum, result, cName, msgHtml)
+                return showResult(firstNum, secondNum, result, cName, msgHtml)
             }
 
         }
