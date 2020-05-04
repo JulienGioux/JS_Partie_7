@@ -68,13 +68,13 @@
 
             console.log(firstNum, secondNum);
             if (isNaN(firstNum) || firstNum == `` || isNaN(secondNum) || secondNum == ``) {
-                divAlert.style.display = `block`;
+                return divAlert.style.display = `block`;
                 // window.alert(`Les champs doivent être rempli avec des données numériques !`)
             } else {
                 let result = firstNum * secondNum;
                 cName = `w3-animate-left`;
                 msgHtml = `${firstNum} * ${secondNum} = ${result}`;
-                showResult(firstNum, secondNum, result, cName, msgHtml)
+                return showResult(firstNum, secondNum, result, cName, msgHtml)
             }
 
         }
