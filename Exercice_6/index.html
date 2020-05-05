@@ -94,9 +94,9 @@ function funcSayHello(name) {
             let pattAz =
                 /^[a-zAZéèëêàäâöôûüîï]+-?[a-zA-Zéèëêàäâöôûüîï]+-?[a-zA-Zéèëêàäâöôûüîï]+-?[a-zA-Zéèëêàäâöôûüîï]+$/;
             if (myStringInput.value == `` || !(pattAz.test(name))) {
-                divAlert.style.display = `block`;
+                return divAlert.style.display = `block`;
             } else {
-                myResult.innerHTML = `<p>${funcSayHello(name)}</p>`;
+                return myResult.innerHTML = `<p>${funcSayHello(name)}</p>`;
             }
 
         }
