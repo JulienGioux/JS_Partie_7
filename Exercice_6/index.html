@@ -92,7 +92,7 @@ function funcSayHello(name) {
         runEx.onclick = function () {
             let name = myStringInput.value;
             let pattAz =
-                /^([a-zA-ZÜ-ü])+(-*)+([a-zA-ZÜ-ü])+$/;
+                /^([a-zA-ZÀ-ÿ])+(-*)+([a-zA-ZÀ-ÿ])+$/;
             if (myStringInput.value == `` || !(pattAz.test(name))) {
                 return divAlert.style.display = `block`;
             } else {
